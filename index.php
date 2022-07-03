@@ -1,5 +1,9 @@
 <?php
 require_once('./components/header.php');
+if(!isset($_SESSION['user']))
+{
+    header('Location: login.php');
+}
 spl_autoload_register(function ($class_name) {
     include './database/' . $class_name . '.php';
 
